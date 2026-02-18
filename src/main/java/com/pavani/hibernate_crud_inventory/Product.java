@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // You can test AUTO & SEQUENCE later
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -24,13 +24,35 @@ public class Product {
         this.quantity = quantity;
     }
 
-    // Getters and Setters
+    // ================= GETTERS =================
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
-    public void setPrice(double price) { this.price = price; }
+    public String getDescription() {
+        return description;
+    }
 
-    public void setQuantity(int quantity) { this.quantity = quantity; }
+    public double getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    // ================= SETTERS =================
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
